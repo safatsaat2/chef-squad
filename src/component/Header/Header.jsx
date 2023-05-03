@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 const Header = () => {
-        return (
+    return (
         <div className="navbar bg-orange-200">
             <div className="navbar-start">
                 <div className="dropdown">
@@ -22,7 +22,8 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn mr-3">Sign in</a>
+                <Link to={'/login'}><a className="btn mr-3">Sign in</a>
+                </Link>
                 <a className="btn">Register</a>
             </div>
         </div>
