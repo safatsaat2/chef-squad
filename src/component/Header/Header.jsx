@@ -15,7 +15,7 @@ const Header = () => {
     const handleLogOut = () =>{
         logOut()
         .then(result=>{
-            return toast("Signed Out")
+            toast.success("Signed Out")
         })
         .catch(err=>{
             console.log(err)
@@ -24,7 +24,9 @@ const Header = () => {
 
     return (
         <div className="navbar bg-orange-200">
-                        <ToastContainer />
+                        <ToastContainer
+                        position='top-center'
+                        />
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
