@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Providers/AuthProviders';
 const Header = () => {
+
+    const {user, auth} = useContext(AuthContext)
+
+    const img = auth.currentUser.photoURL
+
     return (
         <div className="navbar bg-orange-200">
             <div className="navbar-start">
@@ -21,11 +27,15 @@ const Header = () => {
                     <Link to={'/blog'} className='px-4'>Blog</Link>
                 </ul>
             </div>
-            <div className="navbar-end">
+            {user? <div className="navbar-end">
+                <img src={img} className='w-10 h-10 rounded-full mr-5' alt="img" />
+                <Link to={'/register'} className="btn">Log out</Link>
+            </div> : <div className="navbar-end">
                 <Link to={'/login'} className="btn mr-3">Sign in
                 </Link>
                 <Link to={'/register'} className="btn">Register</Link>
-            </div>
+            </div>}
+            
         </div>
     );
 };

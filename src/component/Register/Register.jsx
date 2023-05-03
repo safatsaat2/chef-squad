@@ -27,7 +27,8 @@ const Register = () => {
             .then(()=>{
                 console.log(auth.currentUser)
             })
-            
+            form.reset()
+            return toast("Account Created")
             
         })
         .catch(err=>{
