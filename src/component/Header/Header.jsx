@@ -35,7 +35,7 @@ const Header = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <Link to={'/'} className='text-primary-500'>Home</Link>
-                        <li>Item 3</li>
+                        <Link to={'/blog'} className='px-4'>Blog</Link>
                     </ul>
                 </div>
                 <p className="btn btn-ghost normal-case text-2xl">Chef Squad</p>

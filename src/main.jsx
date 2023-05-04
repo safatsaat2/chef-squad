@@ -10,6 +10,7 @@ import AuthProviders from './component/Providers/AuthProviders'
 import PrivateRoute from './component/PrivateRout/PrivateRoute'
 import RecipePage from './component/RecipePage/RecipePage'
 import NotFound from './component/Error/NotFound'
+import Blog from './component/Blog/Blog'
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
         path: 'recipepage/:id',
         element:<PrivateRoute><RecipePage></RecipePage></PrivateRoute>,
         loader: ({params}) => fetch(`https://chef-squad-server-safatsaat2.vercel.app/recipe/${params.id}`)
+      },
+      {
+        path: '/blog',
+        element: <Blog></Blog>
       },
       {
         path: '*',
