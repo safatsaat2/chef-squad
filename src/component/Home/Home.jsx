@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ChefContainer from '../ChefContainer/ChefContainer';
 import { useLoaderData } from 'react-router-dom';
+import AllRecipeContainer from '../AllRecipeContainer/AllRecipeContainer';
 
 const Home = () => {
 
     const data = useLoaderData()
-    return (<>
-    <div className='bg-orange-50'>
+    const [recipeData, setRecipeData] = useState([])
+
+    useEffect(() => {
+        fetch('https://chef-squad-server-safatsaat2.vercel.app/recipes')
+            .then(res => res.json())
+            .then(data => setRecipeData(data))
+    }, [])
+    return (<div>
+        <div className='bg-orange-50'>
             <div className='container mx-auto grid sm:grid-cols-1 lg:grid-cols-3'>
                 <div>
                     <img className='sm:w-full lg:w-1/2 lg:h-1/2 mt-14 rounded-md' src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" alt="" />
@@ -20,9 +28,14 @@ const Home = () => {
                 </div>
             </div>
         </div>
-        <ChefContainer data={data}></ChefContainer>
-    </>
-        
+        <div className='my-40'>
+            <ChefContainer data={data}></ChefContainer>
+        </div>
+        <div className='my-40'>
+            <AllRecipeContainer data={recipeData}></AllRecipeContainer>
+        </div>
+    </div>
+
     );
 };
 

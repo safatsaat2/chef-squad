@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { FaHeart } from 'react-icons/fa';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
-const RecipeCard = (props) => {
-    const { recipeName, ingredients, cookingMethod, rating } = props.data;
+const AllRecipeCard = (props) => {
+    const { recipeName, ingredients, cookingMethod, rating } = props.data
     console.log(recipeName)
-
     const [enable, setEnable] = useState(false)
 
     const favouritehandler = () => {
@@ -14,7 +12,7 @@ const RecipeCard = (props) => {
         setEnable(true)
     }
     return (
-        <div className='container mx-auto my-5 flex justify-center items-center'>
+        <div className='h-full container mx-auto my-5 flex justify-center items-center'>
             <ToastContainer
                 position="top-center"
                 autoClose={5000}
@@ -27,7 +25,7 @@ const RecipeCard = (props) => {
                 pauseOnHover
                 theme="light"
             />
-            <div className="card w-3/4 bg-base-100 shadow-xl">
+            <div className="card w-3/4 bg-base-100 shadow-xl ">
                 <div className="card-body">
                     <h2 className="font-bold text-3xl text-center mb-3">{recipeName}</h2>
                     <div className="grid sm:grid-cols-1 lg:grid-cols-2">
@@ -52,5 +50,4 @@ const RecipeCard = (props) => {
     );
 };
 
-export default RecipeCard;
-
+export default AllRecipeCard;
