@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaHeart } from 'react-icons/fa';
+import LazyLoad from 'react-lazy-load';
 import { Link } from 'react-router-dom';
 
 const ChefCard = (props) => {
@@ -8,7 +9,9 @@ const ChefCard = (props) => {
     return (
         <div className='flex bg-orange-50 rounded-lg items-center'>
             <div className='w-1/2'>
-                <img className='h-full rounded-lg' src={chefPic} alt="" />
+                <LazyLoad>
+                    <img className='h-full rounded-lg' src={chefPic} alt="" />
+                </LazyLoad>
             </div>
             <div className='ml-5'>
                 <h3 className='text-3xl font-bold pt-4'>{chefName}</h3>
