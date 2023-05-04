@@ -12,7 +12,7 @@ const Login = () => {
 
     const location = useLocation()
 
-    const from = location.state?.from?.pathname || '/';
+    const from = location.state?.from?.pathname || "/";
 
     const [error, setError] = useState('')
 
@@ -23,7 +23,7 @@ const Login = () => {
         const password = form.password.value;
         logIn(email, password)
             .then(result => {
-                navigate(from)
+                navigate(from, {replace: true})
             })
             .catch(err=>{
                 setError(err.message)

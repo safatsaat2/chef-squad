@@ -1,9 +1,10 @@
 import React from 'react';
 import { FaHeart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const ChefCard = (props) => {
     const data = props.data;
-    const { chefName, chefPic, experience, numberOfRecipes, like } = data
+    const { chefName, chefPic, experience, numberOfRecipes, like, _id } = data
     return (
         <div className='flex bg-orange-50 rounded-lg items-center'>
             <div className='w-1/2'>
@@ -17,7 +18,7 @@ const ChefCard = (props) => {
                     <FaHeart></FaHeart>
                     <p className='ml-2'> {like}</p>
                 </div>
-                <button className='btn mt-10'>View Recipes</button>
+                <Link to={`/recipepage/${_id}`}><button className='btn mt-10'>View Recipes</button></Link>
 
             </div>
         </div>
