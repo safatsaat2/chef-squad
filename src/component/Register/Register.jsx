@@ -62,7 +62,7 @@ const Register = () => {
                     <input type="password" name='password' required className='border-2 w-96 h-10 pl-2 border-orange-300 rounded-lg' />
                 </div>
                 <p>{error}</p>
-                <input type="submit" value="Submit" className='block btn mb-2 mt-5' />
+                <input type="submit" value="Register" className='block btn mb-2 mt-5' />
                 <p className=' mb-4'>Already have an account? <Link to={'/register'} className='text-orange-500'>Log in</Link></p>
             </form>
         </div>

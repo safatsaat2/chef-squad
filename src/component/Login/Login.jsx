@@ -65,7 +65,7 @@ const Login = () => {
                     <input type="password" name='password' required className='border-2 w-96 h-10 pl-2 border-orange-300 rounded-lg' />
                 </div>
                 <p>{error}</p>
-                <input type="submit" value="Submit" className='block btn mb-2 mt-5' />
+                <input type="submit" value="Log in" className='block btn mb-2 mt-5' />
                 <p className=' mb-2'>Don't have an account? <Link to={'/register'} className='text-orange-500'>Register</Link></p>
             </form>
             <Button onClick={() => {handleGoogleSingIn()}} className='mb-4'> <FaGoogle className='mr-4'/> Sign in with Google</Button>
