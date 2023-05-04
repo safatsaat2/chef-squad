@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ChefContainer from '../ChefContainer/ChefContainer';
 import { useLoaderData } from 'react-router-dom';
 import AllRecipeContainer from '../AllRecipeContainer/AllRecipeContainer';
+import FoodNews from '../FoodNews/FoodNews';
 
 const Home = () => {
 
@@ -33,6 +34,9 @@ const Home = () => {
         </div>
         <div className='my-40'>
             <AllRecipeContainer data={recipeData}></AllRecipeContainer>
+        </div>
+        <div className='my-40'>
+            <FoodNews></FoodNews>
         </div>
     </div>
 
